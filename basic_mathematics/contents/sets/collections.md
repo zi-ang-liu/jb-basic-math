@@ -40,4 +40,6 @@ For example, the set of all $x$ in the interval $[0, 1]$ can be defined as $\{x 
 - **Subset**: A set $A$ is a subset of a set $B$ if every element of $A$ is also an element of $B$. This is denoted as $A \subseteq B$. If $A$ is a subset of $B$ but not equal to $B$, it is denoted as $A \subset B$.
 - **Superset**: $A \supseteq B$ means $B \subseteq A$. Similarly, $A \supset B$ means $B \subset A$.
 - **Union**: The union of two sets $A$ and $B$ is the set of elements that are in $A$, in $B$, or in both. It is denoted as $A \cup B$. For example, if $A = \{1, 2, 3\}$ and $B = \{3, 4, 5\}$, then $A \cup B = \{1, 2, 3, 4, 5\}$.
-- **Intersection**: 
+- **Intersection**: $A \cap B$ is the set of elements that are in both $A$ and $B$. For example, if $A = \{1, 2, 3\}$ and $B = \{3, 4, 5\}$, then $A \cap B = \{3\}$.
+- **Difference**: $A - B$ is the set of elements that are in $A$ but not in $B$. For example, if $A = \{1, 2, 3\}$ and $B = \{2, 4, 6\}$, then $A - B = \{1, 3\}$. Sometimes, this is denoted as $A \setminus B$.
+- **Complement**: Let $\Omega$ be the universal set. The complement of a set $A$ is the set of elements in $\Omega$ that are not in $A$. It is denoted as $A^c$ or $\bar{A}$. Using set difference, $A^c = \Omega - A$.
