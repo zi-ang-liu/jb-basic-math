@@ -5,5 +5,6 @@ format: jb-book
 root: intro
 parts:
   - caption: Basics
-    chapters: contents/sets/collections
+    chapters: 
+    - file: contents/sets/collections
   - 
