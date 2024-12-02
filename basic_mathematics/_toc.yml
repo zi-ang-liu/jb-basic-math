@@ -12,7 +12,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: contents/sets/collections
+- file: contents/sets/set
 - file: contents/probability/probability
 - file: markdown
 - file: markdown-notebooks
