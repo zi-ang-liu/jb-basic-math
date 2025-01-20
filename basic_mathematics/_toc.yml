@@ -13,6 +13,7 @@ format: jb-book
 root: intro
 chapters:
 - file: contents/sets/set
+- file: contents/sets/set_jp
 - file: contents/probability/probability
 - file: markdown
 - file: markdown-notebooks
