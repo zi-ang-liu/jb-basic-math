@@ -48,6 +48,18 @@ $$x \notin S$$
 - 相等（Equality）：集合$A$と$B$が同じ元から構成されているとき，$A = B$と表す．すなわち，$A \subseteq B$かつ$B \subseteq A$が成り立つ．
 - 真部分集合（Proper subset）：$A \subseteq B$かつ$A \neq B$のとき，$A \subset B$と表す．
   
+## 順序組
+
+順序組（Tuple，タプル）は，複数の対象を順序を持って並べたものである．$n$個の対象を並べた順序組を$n$-組（$n$-tuple）という．
+
+$(a_1, a_2, \ldots, a_n)$，$(b_1, b_2, \ldots, b_n)$を二つの$n$-組とするとき，
+
+$$(a_1, a_2, \ldots, a_n) = (b_1, b_2, \ldots, b_n)$$
+
+であるためには，$a_1 = b_1$，$a_2 = b_2$，$\ldots$，$a_n = b_n$でないといけない．例えば，$(1, 2) \neq (2, 1)$である．
+
+$2$-組を特に**順序対**（ordered pair）という．例えば，$a$，$b$を二つの対象とするとき，$a$，$b$の**順序対**（ordered pair）は$(a, b)$で表される．
+
 ## 集合算
 
 ### 和集合（Union）
@@ -80,8 +92,6 @@ $$A \setminus B = \{x \mid x \in A \text{ かつ } x \notin B\}$$
 $\Omega$を全体集合とするとき，集合$A$の補集合は$\Omega \setminus A$である．$A^c$または$\bar{A}$と書くこともある．
 
 ### 直積（Cartesian product）
-
-$a$，$b$を二つの対象とするとき，$a$，$b$の**順序対**（ordered pair）は$(a, b)$で表される．順序対は順序を持つため，$(1, 2) \neq (2, 1)$である．
 
 $A$，$B$を二つの集合とするとき，$A$と$B$の**直積**は
 
