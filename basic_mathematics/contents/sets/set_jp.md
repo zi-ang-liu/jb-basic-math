@@ -50,7 +50,45 @@ $$x \notin S$$
   
 ## 集合算
 
-- 和集合（Union）：$A$と$B$を集合とし，$A \cup B = \{x \mid x \in A \text{ または } x \in B\}$を$A$と$B$の和集合という．
-- 共通部分（Intersection）：$A$と$B$を集合とし，$A \cap B = \{x \mid x \in A \text{ かつ } x \in B\}$を$A$と$B$の共通部分という．
-- 差集合（Difference）：$A$と$B$を集合とし，$A \setminus B = \{x \mid x \in A \text{ かつ } x \notin B\}$を$A$と$B$の差集合という．$A - B$と書くこともある．
-- 補集合（Complement）：$\Omega$を全体集合とするとき，集合$A$の補集合は$\Omega \setminus A$である．$A^c$または$\bar{A}$と書くこともある．
+### 和集合（Union）
+
+$A$，$B$を二つの集合とするとき，
+
+$$A \cup B = \{x \mid x \in A \text{ または } x \in B\}$$
+
+を$A$と$B$の和集合という．
+
+
+### 共通部分（Intersection）：
+
+$A$，$B$を二つの集合とするとき，
+
+$$A \cap B = \{x \mid x \in A \text{ かつ } x \in B\}$$
+
+を$A$と$B$の共通部分という．  
+
+### 差集合（Difference）
+
+$A$，$B$を二つの集合とするとき，
+
+$$A \setminus B = \{x \mid x \in A \text{ かつ } x \notin B\}$$
+
+を$A$と$B$の差集合という．$A - B$と書くこともある．
+
+### 補集合（Complement）
+
+$\Omega$を全体集合とするとき，集合$A$の補集合は$\Omega \setminus A$である．$A^c$または$\bar{A}$と書くこともある．
+
+### 直積（Cartesian product）
+
+$a$，$b$を二つの対象とするとき，$a$，$b$の**順序対**（ordered pair）は$(a, b)$で表される．順序対は順序を持つため，$(1, 2) \neq (2, 1)$である．
+
+$A$，$B$を二つの集合とするとき，$A$と$B$の**直積**は
+
+$$A \times B = \{(a, b) \mid a \in A, b \in B\}$$
+
+である．例えば，$\{1, 2\} \times \{3, 4, 5\} = \{(1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5)\}$である．
+
+### 冪乗集合（Power set）
+
+$A$を集合とするとき，$A$のすべての部分集合からなる集合を$A$の冪乗集合といい，記号$\mathcal{P}(A)$や$2^A$で表す．例えば，$A = \{1, 2\}$のとき，$\mathcal{P}(A) = 2^A = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}$である．
