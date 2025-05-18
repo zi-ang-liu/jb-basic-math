@@ -19,3 +19,5 @@ chapters:
 # - file: markdown-notebooks
 # - file: contents/initialization
 - file: contents/py_ex_function
+- file: contents/py_ex_class
+- file: contents/py_ex_numpy
