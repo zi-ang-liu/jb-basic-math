@@ -1,10 +1,8 @@
-# Python練習
+# 関数
 
-## 関数
+## Basic
 
-### Basic
-
-#### Q1
+### Q1
 
 `my_abs()`関数を定義し、引数に与えた数値の絶対値を返すようにせよ。
 
@@ -15,7 +13,7 @@ def my_abs(x):
 print(my_abs(-5))  # 5
 ```
 
-#### Q2
+### Q2
 
 `my_add()`関数を定義し、引数に与えた2つの数値の和を返すようにせよ。
 
@@ -26,7 +24,7 @@ def my_add(x, y):
 print(my_add(3, 5))  # 8
 ```
 
-#### Q3
+### Q3
 
 $f(x) = x^2 + 2x + 1$を計算する`my_function()`関数を定義せよ。
 
@@ -37,7 +35,7 @@ def f(x):
 print(f(3))  # 16
 ```
 
-#### Q4
+### Q4
 
 成績を評価する`evaluate_grade()`関数を定義せよ。引数に与えた点数が90以上なら"A"、80以上なら"B"、70以上なら"C"、60以上なら"D"、それ未満なら"F"を返すようにする。
 
@@ -49,7 +47,7 @@ score = int(input("Enter your score: "))
 print(evaluate_grade(score))
 ```
 
-### 二分法
+## 二分法
 
 二分法(数値解析)
 
@@ -137,7 +135,7 @@ a, b, x = bisection(f, 0, 3)
 print(f"Root={x}, Lower bound={a}, Upper bound={b}")
 ```
 
-### ニュートン法
+## ニュートン法
 
 ニュートン法は数値解析において、求根アルゴリズムの１つです。
 
