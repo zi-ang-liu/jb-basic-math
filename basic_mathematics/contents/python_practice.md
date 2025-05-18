@@ -1,0 +1,216 @@
+# Python練習
+
+## 関数
+
+### Basic
+
+#### Q1
+
+`my_abs()`関数を定義し、引数に与えた数値の絶対値を返すようにせよ。
+
+```python
+def my_abs(x):
+    # your code here
+
+print(my_abs(-5))  # 5
+```
+
+#### Q2
+
+`my_add()`関数を定義し、引数に与えた2つの数値の和を返すようにせよ。
+
+```python
+def my_add(x, y):
+    # your code here
+
+print(my_add(3, 5))  # 8
+```
+
+#### Q3
+
+$f(x) = x^2 + 2x + 1$を計算する`my_function()`関数を定義せよ。
+
+```python
+def f(x):
+    # your code here
+
+print(f(3))  # 16
+```
+
+#### Q4
+
+成績を評価する`evaluate_grade()`関数を定義せよ。引数に与えた点数が90以上なら"A"、80以上なら"B"、70以上なら"C"、60以上なら"D"、それ未満なら"F"を返すようにする。
+
+```python
+def evaluate_grade(score):
+    # your code here
+
+score = int(input("Enter your score: "))
+print(evaluate_grade(score))
+```
+
+### 二分法
+
+二分法(数値解析)
+
+二分法は数値解析において根を求めるためのアルゴリズムの一つです。
+
+$f$が連続関数である区間$[a, b]$が与えられたとき、$f(a)$と$f(b)$が異符号であれば、$f$は$[a, b]$上で少なくとも1つの根を持ちます。この性質は**中間値の定理**により保証されます。二分法は区間$[a, b]$を狭めていくことで、根を求めるアルゴリズムです。
+
+二分法では、$I^{(0)} = [a^{(0)}, b^{(0)}]$を与えられた区間とし、$f(a^{(0)})f(b^{(0)})<0$であるとします。$I^{(0)}$の中点を$x^{(0)} = (a^{(0)}+b^{(0)})/2$とします。$f(x^{(0)})$の値が以下の三つの場合に分けられます。
+
+1. $f(x^{(0)}) = 0$
+2. $f(x^{(0)})<0$
+3. $f(x^{(0)})>0$
+
+$f(x^{(0)})=0$の場合、$x^{(0)}$は根であるため、計算を打ち切ります。$f(x^{(0)})<0$、または$f(x^{(0)})>0$の場合、必ず$f(a^{(0)})f(x^{(0)})<0$、または$f(b^{(0)})f(x^{(0)})<0$のどちらかが成り立ちます。この性質を利用して、次の区間を選択します。
+
+- もし$f(a^{(0)})f(x^{(0)})<0$であれば、$a^{(1)}=a^{(0)}, b^{(1)}=x^{(0)}$とします。
+- もし$f(b^{(0)})f(x^{(0)})<0$であれば、$a^{(1)}=x^{(0)}, b^{(1)}=b^{(0)}$とします。
+
+$I^{(1)} = [a^{(1)}, b^{(1)}]$を新しい区間として、$f(a^{(1)})f(b^{(1)})<0$であることが保証されます。このように反復計算を行うことで、$I^{(1)}, I^{(2)}, \ldots$と区間を狭めていき、根の近似値を求めることができます。
+
+二分法の擬似コードは以下に示します。
+
+```{prf:algorithm} Bisection method
+:label: bisection-algorithm
+
+**Inputs:** function $f$, interval $[a, b]$, tolerance $\epsilon$   
+**Output:** interval $[a, b]$, estimate of the root $x$
+
+1. Ensure $f(a)f(b) < 0$
+2. While $b - a > \epsilon$:
+    1. $x \leftarrow (a + b) / 2$
+    2. If $f(x) = 0$, return $m$
+    3. Else if $f(a)f(x) < 0$, $b \leftarrow x$
+    4. Else, $a \leftarrow x$
+3. Return $a, b, x$
+```
+
+`# your code here`の部分にソースコードを記述し、二分法の実装を完成せよ。
+
+```python
+def bisection(f, a, b, tol=1e-6):
+    """
+    Bisection method: root finding algorithm
+
+    Parameters
+    ----------
+    f : function
+        The function to find the root of
+    a : float
+        Lower bound of the interval
+    b : float
+        Upper bound of the interval
+    tol : float
+        Tolerance
+
+    Returns
+    -------
+    a : float
+        Lower bound of the interval
+    b : float
+        Upper bound of the interval
+    x : float
+        The estimated root
+
+    """
+
+    if f(a) * f(b) > 0:
+        raise ValueError("f(a) and f(b) must have opposite signs")
+
+    if f(a) == 0:
+        return a, a, a
+    if f(b) == 0:
+        return b, b, b
+
+    while b - a > tol:
+        # Your code here
+    return a, b, (a + b) / 2
+
+
+def f(x):
+    return x**2 - 4
+
+
+a, b, x = bisection(f, 0, 3)
+print(f"Root={x}, Lower bound={a}, Upper bound={b}")
+```
+
+### ニュートン法
+
+ニュートン法は数値解析において、求根アルゴリズムの１つです。
+
+ニュートン法では、以下の漸化式を用いて解を求めます。
+
+$$
+x^{(k+1)} = x^{(k)} - \frac{f(x^{(k)})}{f'(x^{(k)})}
+$$
+
+$x^{(0)}$を与えられた初期値として、上記の漸化式を繰り返し適用することで、$x^{(1)}, x^{(2)}, \ldots$を求めます。
+
+ニュートン法の停止条件として、よく使われるのは以下の２つです。
+
+1. $|f(x^{(k)})| < \epsilon$
+2. $|x^{(k+1)} - x^{(k)}| < \epsilon$
+
+ここで、$\epsilon$はあらかじめ与えられた許容誤差です。
+
+ニュートン法の擬似コードは以下に示します。
+
+```{prf:algorithm} Newton's method
+:label: newton-algorithm
+
+**Inputs:** function $f$, derivative of the function $f'$, initial guess $x^{(0)}$, tolerance $\epsilon$   
+**Output:** estimate of the root $x$
+
+1. $x \leftarrow x^{(0)}$
+2. While $|f(x)| > \epsilon$:
+    1. $x \leftarrow x - f(x) / f'(x)$
+3. Return $x$
+```
+
+`# your code here`の部分にソースコードを記述し、ニュートン法の実装を完成せよ。
+
+```python
+def newton(f, df, x0, tol=1e-6):
+    """
+    Newton's method: root finding algorithm
+
+    Parameters
+    ----------
+    f : function
+        The function to find the root of
+    df : function
+        The derivative of the function
+    x0 : float
+        Initial guess
+    tol : float
+        Tolerance
+
+    Returns
+    -------
+    x : float
+        The estimated root
+
+    """
+
+    x = x0
+    while abs(f(x)) > tol:
+        # Your code here
+    return x
+
+
+def df(x):
+    return 2 * x
+
+
+def f(x):
+    return x**2 - 4
+
+
+x = newton(f, df, 3)
+
+print(f"Root={x}")
+
+```
